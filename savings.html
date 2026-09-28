@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Savings Calculator - Bilal Tools</title><meta name="description" content="Calculate future savings from regular monthly contributions and interest.">
+<style>body{font-family:Arial;max-width:650px;margin:auto;padding:25px;background:#f6f7fb}.card{background:#fff;padding:24px;border-radius:14px;box-shadow:0 2px 12px #0001}input{width:100%;box-sizing:border-box;padding:11px;margin:7px 0 14px}button{padding:11px 18px;border:0;border-radius:8px}#result{margin-top:18px;font-size:20px}</style></head>
+<body><h1>Savings Calculator</h1><div class="card"><label>Starting Balance</label><input id="p" type="number" value="0">
+<label>Monthly Contribution</label><input id="c" type="number" value="10000">
+<label>Annual Interest Rate (%)</label><input id="r" type="number" value="10" step=".01">
+<label>Years</label><input id="y" type="number" value="5">
+<button onclick="calc()">Calculate</button><div id="result"></div></div>
+<script>function calc(){let P=+p.value||0,C=+c.value||0,rate=(+r.value||0)/1200,n=(+y.value||0)*12;let fv=rate?P*Math.pow(1+rate,n)+C*(Math.pow(1+rate,n)-1)/rate:P+C*n;result.innerHTML='Estimated future value: <b>'+fv.toLocaleString(undefined,{maximumFractionDigits:2})+'</b>'}calc();</script></body></html>

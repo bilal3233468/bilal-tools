@@ -1,0 +1,6 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Base64 Encoder Decoder - Bilal Tools</title><meta name="description" content="Encode and decode Base64 text online in your browser.">
+<style>body{font-family:Arial;max-width:850px;margin:auto;padding:25px;background:#f6f7fb}.card{background:#fff;padding:22px;border-radius:14px;box-shadow:0 2px 12px #0001}textarea{width:100%;height:220px;box-sizing:border-box;padding:12px;margin:8px 0}button{padding:10px 15px;margin:5px;border:0;border-radius:8px}</style></head>
+<body><h1>Base64 Encoder & Decoder</h1><div class="card"><textarea id="t" placeholder="Enter text or Base64..."></textarea><button onclick="enc()">Encode</button><button onclick="dec()">Decode</button><button onclick="copy()">Copy</button><p id="msg"></p></div>
+<script>const te=new TextEncoder(),td=new TextDecoder();function enc(){t.value=btoa(String.fromCharCode(...te.encode(t.value)))}function dec(){try{let s=atob(t.value),a=Uint8Array.from(s,c=>c.charCodeAt(0));t.value=td.decode(a);msg.textContent='Decoded successfully.'}catch(e){msg.textContent='Invalid Base64 input.'}}function copy(){navigator.clipboard.writeText(t.value);msg.textContent='Copied.'}</script></body></html>

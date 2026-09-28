@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cash Memo Maker - Bilal Tools</title><meta name="description" content="Create and print a simple cash memo online for free.">
+<style>body{font-family:Arial,sans-serif;max-width:850px;margin:auto;padding:20px;background:#f6f7fb}h1{margin-bottom:5px}.card{background:#fff;padding:20px;border-radius:14px;box-shadow:0 2px 12px #0001;margin-top:18px}input{padding:10px;width:100%;box-sizing:border-box;margin:5px 0 12px;border:1px solid #ddd;border-radius:8px}table{width:100%;border-collapse:collapse}th,td{border:1px solid #ddd;padding:8px}button{padding:10px 16px;border:0;border-radius:8px;cursor:pointer;margin:5px}@media print{.no-print{display:none!important}body{background:white}}</style></head>
+<body><h1>Cash Memo Maker</h1><p>Create, calculate and print a simple cash memo.</p>
+<div class="card"><label>Customer Name</label><input id="customer" placeholder="Customer name">
+<table id="items"><tr><th>Item</th><th>Qty</th><th>Price</th><th>Total</th></tr></table>
+<button onclick="add()">+ Add Item</button><h3>Grand Total: <span id="grand">0.00</span></h3>
+<div class="no-print"><button onclick="add()">Add another</button><button onclick="window.print()">Print / Save PDF</button></div></div>
+<script>
+function add(){let t=document.querySelector('#items');let r=t.insertRow();r.innerHTML='<td><input placeholder="Item"></td><td><input type="number" value="1" min="0" oninput="calc()"></td><td><input type="number" value="0" min="0" step="0.01" oninput="calc()"></td><td class="sum">0.00</td>';calc()}
+function calc(){let g=0;document.querySelectorAll('#items tr:not(:first-child)').forEach(r=>{let q=+r.cells[1].querySelector('input').value||0,p=+r.cells[2].querySelector('input').value||0,s=q*p;r.cells[3].textContent=s.toFixed(2);g+=s});document.getElementById('grand').textContent=g.toFixed(2)}
+add();
+</script></body></html>

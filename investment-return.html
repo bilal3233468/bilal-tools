@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Investment Return Calculator - Bilal Tools</title><meta name="description" content="Calculate investment profit, loss and percentage return online.">
+<style>body{font-family:Arial;max-width:650px;margin:auto;padding:25px;background:#f6f7fb}.card{background:#fff;padding:24px;border-radius:14px;box-shadow:0 2px 12px #0001}input{width:100%;box-sizing:border-box;padding:11px;margin:7px 0 14px}button{padding:11px 18px;border:0;border-radius:8px}</style></head>
+<body><h1>Investment Return Calculator</h1><div class="card"><label>Initial Investment</label><input id="i" type="number" value="100000">
+<label>Final Value</label><input id="f" type="number" value="120000">
+<label>Additional Income / Dividends</label><input id="d" type="number" value="0">
+<button onclick="calc()">Calculate Return</button><div id="res" style="margin-top:18px;font-size:19px"></div></div>
+<script>function calc(){let a=+i.value||0,v=(+f.value||0)+(+d.value||0),p=v-a,pc=a?p/a*100:0;res.innerHTML='Profit/Loss: <b>'+p.toLocaleString()+'</b><br>Total Return: <b>'+pc.toFixed(2)+'%</b>'}calc();</script></body></html>

@@ -1,0 +1,6 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>UUID Generator - Bilal Tools</title><meta name="description" content="Generate random UUID version 4 identifiers online for free.">
+<style>body{font-family:Arial;max-width:700px;margin:auto;padding:25px;background:#f6f7fb}.card{background:#fff;padding:25px;border-radius:14px;box-shadow:0 2px 12px #0001}textarea{width:100%;height:180px;box-sizing:border-box;padding:12px;font-family:monospace}button{padding:11px 16px;margin:8px 5px 0 0;border:0;border-radius:8px}</style></head>
+<body><h1>UUID Generator</h1><div class="card"><textarea id="out" readonly></textarea><button onclick="gen()">Generate UUIDs</button><button onclick="copy()">Copy</button></div>
+<script>function gen(){out.value=Array.from({length:10},()=>crypto.randomUUID()).join('\n')}function copy(){navigator.clipboard.writeText(out.value);alert('Copied!')}gen();</script></body></html>

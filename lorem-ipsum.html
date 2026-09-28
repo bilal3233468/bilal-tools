@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lorem Ipsum Generator - Bilal Tools</title><meta name="description" content="Generate Lorem Ipsum placeholder text by paragraphs or words.">
+<style>body{font-family:Arial;max-width:850px;margin:auto;padding:25px;background:#f6f7fb}.card{background:white;padding:22px;border-radius:14px;box-shadow:0 2px 12px #0001}input,select,button{padding:10px;margin:6px}textarea{width:100%;height:300px;box-sizing:border-box;padding:12px;border:1px solid #ddd;border-radius:8px}</style></head>
+<body><h1>Lorem Ipsum Generator</h1><div class="card"><label>Paragraphs <input id="n" type="number" value="3" min="1" max="30"></label><button onclick="gen()">Generate</button><button onclick="copy()">Copy</button><textarea id="out"></textarea></div>
+<script>const words='lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi aliquip ex ea commodo consequat'.split(' ');
+function para(){let a=[];for(let i=0;i<55;i++)a.push(words[Math.floor(Math.random()*words.length)]);a[0]=a[0][0].toUpperCase()+a[0].slice(1);return a.join(' ')+'.'}
+function gen(){out.value=Array.from({length:+n.value},para).join('\n\n')}function copy(){navigator.clipboard.writeText(out.value);alert('Copied!')}gen();</script></body></html>
